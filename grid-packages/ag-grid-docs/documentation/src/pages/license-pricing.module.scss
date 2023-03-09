@@ -9,7 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: $size-4;
-    margin-top: $size-6 !important; // !important for .ag-styles specificity
+    margin-top: $size-8 !important; // !important for .ag-styles specificity
 
     @media screen and (min-width: $breakpoint-pricing-large) {
         flex-wrap: nowrap;
@@ -17,38 +17,48 @@
 
     h1 {
         font-size: 46px;
-    }
-
-    p {
-        font-size: 18px;
-    }
-
-    h1 svg {
-        --text-color: red;
-
-        display: inline-block;
-        position: relative;
-        width: 46px;
-        bottom: 4px;
+        font-weight: var(--font-weight-bold) !important; // !important for .ag-styles specificit
+        margin-bottom: $size-1 !important; // !important for .ag-styles specificit
     }
 }
 
-.enterpriseExplainer {
-    margin-top: 76px !important; // !important for .ag-styles specificit
+.intro {
+    margin-top: $size-8 !important; // !important for .ag-styles specificit
     margin-bottom: $size-4 !important; // !important for .ag-styles specificit
 }
 
+.salesEmail {
+    margin-top: $size-2 !important; // !important for .ag-styles specificit
+    margin-bottom: $size-2 !important; // !important for .ag-styles specificit
+
+    p {
+        margin-bottom: 0 !important; // !important for .ag-styles specificit
+        line-height: var(--line-height-tight) !important; // !important for .ag-styles specificit
+    }
+
+    a {
+    }
+}
+
 .videoPrompt {
+    --line-height: var(--line-height-tight) !important; // !important for .ag-styles specificity
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0 $size-2;
-    margin-top: $size-6 !important; // !important for .ag-styles specificity
+    justify-content: center;
+    text-align: center;
+    gap: $size-1 $size-2;
+    margin-top: $size-7 !important; // !important for .ag-styles specificity
+
+    @media screen and (min-width: $breakpoint-pricing-small) {
+        justify-content: flex-start;
+        text-align: left;
+    }
 
     h3,
     p {
         margin: 0 !important; // !important for .ag-styles specificity
-        line-height: $line-height-tight;
     }
 }
 
@@ -56,10 +66,15 @@
     width: 33.333%;
     min-width: 160px;
     max-width: 220px;
-    aspect-ratio: 16 / 9;
-    margin-top: $size-1 !important; // !important for .ag-styles specificity
-    object-fit: cover;
     border-radius: var(--border-radius);
+
+    img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        margin-top: $size-1 !important; // !important for .ag-styles specificity
+        object-fit: cover;
+        border-radius: var(--border-radius);
+    }
 }
 
 .bulkLicenses,
@@ -74,47 +89,25 @@
     text-align: center;
 
     p {
-        max-width: 44em;
-    }
-
-    a {
-        margin-bottom: $size-1;
-        margin-left: $size-1;
-        margin-right: $size-1;
-    }
-
-    @media screen and (min-width: $breakpoint-pricing-medium) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        p {
-            margin: 0 !important; // !important for .ag-styles specificity
-            text-align: left;
-        }
-
-        a {
-            font-size: $font-size-large !important; // !important for .ag-styles specificity
-        }
+        max-width: 48em;
+        margin: 0 auto $size-1 !important; // !important for .ag-styles specificity
     }
 }
 
-.contactSalesButton {
-    display: inline-flex !important; // !important for .ag-styles specificity
+.ukraineNotice {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: $size-1;
+    gap: $size-2;
+    max-width: 48em;
+    margin: $size-7 auto $size-8 !important; // !important for .ag-styles specificity
 
-    :global(.icon) {
-        position: static !important; // !important for .ag-styles specificity
-        width: 54px !important; // !important for .ag-styles specificity
-        height: 54px !important; // !important for .ag-styles specificity
-        margin: 0 0 -0.1em !important; // !important for .ag-styles specificity
+    @media screen and (min-width: $breakpoint-alert-flag-small) {
+        flex-direction: row;
     }
 
-    div > span {
-        display: block;
-        line-height: 1.125;
-        text-align: left;
+    img {
+        width: 80px;
     }
 }
 
@@ -139,13 +132,19 @@
     }
 }
 
-.enterprise svg {
-    --text-color: red;
-
+.enterprise h3 {
     position: relative;
-    width: 26px;
-    top: -1px;
-    left: 2px;
+    display: inline-block;
+    padding-right: 32px;
+
+    svg {
+        --text-color: red;
+
+        position: absolute;
+        width: 26px;
+        bottom: -7px;
+        right: 2px;
+    }
 }
 
 .NpmButton svg {
@@ -173,7 +172,8 @@
     }
 
     h3 {
-        line-height: $line-height-tight !important; // !important for .ag-styles specificity
+        --line-height: var(--line-height-tight) !important; // !important for .ag-styles specificity
+
         font-weight: var(--font-weight-bold) !important; // !important for .ag-styles specificity
 
         @media screen and (min-width: $breakpoint-pricing-large) {
@@ -206,7 +206,7 @@
     }
 
     ul {
-        line-height: $line-height-tight;
+        --line-height: var(--line-height-tight) !important; // !important for .ag-styles specificity
     }
 
     li:not(:last-child) {
@@ -236,12 +236,12 @@
     p {
         max-width: 740px;
         margin-right: auto;
-        margin-bottom: $size-2;
+        margin-bottom: $size-1 !important; // !important for .ag-styles specificity
         margin-left: auto;
     }
 
     a {
-        font-size: $font-size-large !important; // !important for .ag-styles specificity
+        font-size: var(--font-size-extra-large) !important; // !important for .ag-styles specificity
         display: inline-block;
     }
 }

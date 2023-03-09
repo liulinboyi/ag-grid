@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import ukraineFlagSVG from 'images/ukraine-flag.svg';
 import React from 'react';
-import { Alert } from '../components/alert/Alert';
 import { Icon } from '../components/Icon';
 import { Licenses } from '../components/licenses/Licenses';
 import NPMIcon from '../images/inline-svgs/npm.svg';
@@ -14,60 +13,28 @@ const LicensePricing = () => {
     return (
         <div className="ag-styles">
             <div className={classnames('page-margin', styles.container)}>
-                <Alert type="flag">
-                    <img src={ukraineFlagSVG} alt="flag of Ukraine" />
-
-                    <p>
-                        In light of current events in Ukraine we are choosing to express our disappointment in the
-                        breakdown of diplomacy, and its effects on the people of Ukraine, the global economy and
-                        community by not licensing software to companies or individuals registered or residing in the
-                        Russian Federation.
-                    </p>
-                </Alert>
-
                 <div className={styles.topSection}>
-                    <div className={styles.enterpriseExplainer}>
-                        <h1>
-                            AG Grid Enterprise <Icon name="enterprise" />
-                        </h1>
-                        <p>
-                            <b>AG Grid Enterprise</b> offers advanced functionality like{' '}
-                            <a href={`${hostPrefix}/javascript-data-grid/grouping/`} target="_blank">
-                                Row Grouping
-                            </a>
-                            ,{' '}
-                            <a href={`${hostPrefix}/javascript-data-grid/range-selection/`} target="_blank">
-                                Range Selection
-                            </a>
-                            ,{' '}
-                            <a href={`${hostPrefix}/javascript-data-grid/master-detail/`} target="_blank">
-                                Master / Detail
-                            </a>
-                            ,{' '}
-                            <a href={`${hostPrefix}/javascript-data-grid/server-side-model/`} target="_blank">
-                                Server Side Row Model
-                            </a>{' '}
-                            and{' '}
-                            <a
-                                href={`${hostPrefix}/javascript-data-grid/licensing/#feature-comparison`}
-                                target="_blank"
-                            >
-                                much much more
-                            </a>
-                            .
+                    <div className={styles.intro}>
+                        <h1>AG Grid Licences</h1>
+
+                        <p className="font-size-extra-large">
+                            Get in touch and start a conversation. We can provide quotes, give bulk pricing, and answer
+                            any sales or contract-related questions you may have.
                         </p>
-                        <p>
-                            <b>AG Grid Enterprise</b> also comes with{' '}
-                            <a href={`${hostPrefix}/javascript-data-grid/integrated-charts/`}>Integrated Charts</a>,
-                            allowing your users to create charts using the grid's UI.
+
+                        <p className={styles.salesEmail}>
+                            <a className="button font-size-extra-large" href="mailto:info@ag-grid.com">
+                                <Icon name="email" /> info@ag-grid.com
+                            </a>
                         </p>
 
                         <div className={styles.videoPrompt}>
-                            <img
-                                className={styles.thumbnail}
-                                src="https://img.youtube.com/vi/20SLdu4wLtI/hqdefault.jpg"
-                                alt="AG Grid license explained video"
-                            />
+                            <a href="#video-explainer" className={styles.thumbnail}>
+                                <img
+                                    src="https://img.youtube.com/vi/20SLdu4wLtI/hqdefault.jpg"
+                                    alt="AG Grid license explained video"
+                                />
+                            </a>
 
                             <div>
                                 <h3>Which licenses do I need?</h3>
@@ -86,21 +53,16 @@ const LicensePricing = () => {
 
                 <div className={styles.bulkLicenses}>
                     <p className="text-secondary">
-                        Bulk pricing discounts available. Use the pay with card buttons above to see pricing for up to
-                        10 developers. For more than 10 developers or any questions with regards to your purchase...
+                        Bulk pricing discounts available. Use the buy now buttons above to see pricing for up to 10
+                        developers. For more than 10 developers or any questions regarding your purchase, please email
+                        us.
                     </p>
+
                     <a
-                        className={classnames(styles.contactSalesButton, 'button-secondary')}
+                        className="font-size-extra-large"
                         href="mailto:info@ag-grid.com?subject=AG Grid Developer license query"
                     >
-                        <Icon name="email" />
-
-                        <div>
-                            <span className={styles.buttonText}>Contact sales</span>
-                            <span className={classnames(styles.buttonEmail, 'font-size-extra-small')}>
-                                info@ag-grid.com
-                            </span>
-                        </div>
+                        info@ag-grid.com
                     </a>
                 </div>
 
@@ -203,9 +165,20 @@ const LicensePricing = () => {
                     </div>
                 </div>
 
+                <div className={styles.ukraineNotice}>
+                    <img src={ukraineFlagSVG} alt="flag of Ukraine" />
+
+                    <p className="text-secondary font-size-small">
+                        In light of current events in Ukraine we are choosing to express our disappointment in the
+                        breakdown of diplomacy, and its effects on the people of Ukraine, the global economy and
+                        community by not licensing software to companies or individuals registered or residing in the
+                        Russian Federation.
+                    </p>
+                </div>
+
                 <div className={styles.videoExplainer} id="video-explainer">
                     <div>
-                        <h3 className="font-size-extra-large">Questions about our licenses? </h3>
+                        <h3 className="font-size-massive">Questions about our licenses? </h3>
                         <p>
                             Watch our short video for an in-depth look at exactly how each AG Grid license works. Learn
                             which license is right for you, how many licenses you need for you team, and exactly when
@@ -227,7 +200,7 @@ const LicensePricing = () => {
                 </div>
 
                 <div className={styles.licensesInDetail}>
-                    <h3 className="font-size-extra-large">Our Licenses in Depth</h3>
+                    <h3 className="font-size-massive">Our Licenses in Depth</h3>
 
                     <div
                         className={classnames(styles.singleApplicationLicense, 'ag-card', 'single-application')}
@@ -359,19 +332,10 @@ const LicensePricing = () => {
                     </p>
 
                     <a
-                        className={classnames(styles.contactSalesButton, 'button-secondary')}
+                        className="font-size-extra-large"
                         href="mailto:info@ag-grid.com?subject=AG Grid Developer license query"
                     >
-                        <span className="icon">
-                            <Icon name="email" />
-                        </span>
-
-                        <div>
-                            <span className={styles.buttonText}>Contact sales</span>
-                            <span className={classnames(styles.buttonEmail, 'font-size-extra-small')}>
-                                info@ag-grid.com
-                            </span>
-                        </div>
+                        info@ag-grid.com
                     </a>
                 </div>
             </div>
